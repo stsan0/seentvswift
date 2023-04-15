@@ -17,7 +17,7 @@ struct ContentView: View {
             } else {
                 ScrollView(.horizontal) {
                     HStack {
-                        ForEach(viewModel.trending) { TrendingItem in
+                        ForEach(viewModel.trending) { trendingItem in
                             TrendingCard(trendingItem: trendingItem)
                         }
                     }
@@ -67,7 +67,7 @@ struct TrendingCard: View {
 
 @MainActor
 class MovieDBViewModel : ObservableObject {
-    @Published var homeScreen: [TrendingItem] = []
+    @Published var trending: [TrendingItem] = []
     static let apiKey = "91b0dea6fc09258822bd56c6197f8690"
 //    static let apiToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MWIwZGVhNmZjMDkyNTg4MjJiZDU2YzYxOTdmODY5MCIsInN1YiI6IjY0MmU3M2EwMGQyZjUzMDBiNmNjMWI2MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.W89mNNZyYpEo93XLIu3FYqvBxF05JVEZmE-9P_MVs4s"
     
